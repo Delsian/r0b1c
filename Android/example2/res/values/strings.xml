@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MotorBoat</string>
+    <string name="searching">Searching motor_boat ...</string>
+    <string name="idle">Idle</string>
+    <string name="ble_not_supported">BLE is not supported</string>    
+    <string name="error_bluetooth_not_supported">Bluetooth not supported.</string>
+    <string name="ge_found">motor_boat found, connecting ...</string>    
+    <string name="ge_connected">motor_boat connected</string>    
+    <string name="ge_discovered">motor_boat ready</string>    
+    <string name="ge_disconnected">motor_boat disconnected</string>        
+    <string name="disconnect">Disconnect</string>        
+    <string name="rescan">Rescan</string>        
+</resources>
