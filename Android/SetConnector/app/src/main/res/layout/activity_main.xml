@@ -15,7 +15,7 @@
         android:layout_gravity="center_horizontal" />
 
     <ImageButton
-        android:id="@+id/conn"
+        android:id="@+id/ib_conn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@android:drawable/star_on"

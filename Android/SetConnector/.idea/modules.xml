@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SetConnector.iml" filepath="$PROJECT_DIR$/SetConnector.iml" />
+      <module fileurl="file://E:\work\r0b1c\Android\SetConnector\SetConnector.iml" filepath="E:\work\r0b1c\Android\SetConnector\SetConnector.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://E:\work\r0b1c\Android\SetConnector\app\app.iml" filepath="E:\work\r0b1c\Android\SetConnector\app\app.iml" />
     </modules>
   </component>
 </project>
