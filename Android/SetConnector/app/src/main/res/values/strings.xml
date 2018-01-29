@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">SetConnector</string>
-    <string name="ble_not_supported">BLE is not supported</string>
-    <string name="error_bluetooth_not_supported">Bluetooth not supported.</string>
-    <string name="idle">Idle</string>
-    <string name="searching">Searching...</string>
-    <string name="disconnect">Disconnect</string>
-    <string name="rescan">Rescan</string>
-</resources>
