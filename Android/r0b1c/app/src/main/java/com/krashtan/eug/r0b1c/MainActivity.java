@@ -10,11 +10,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.krashtan.eug.r0b1c.ble.BluetoothHandler;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
     private BluetoothHandler bluetoothHandler;
-    private ListView bleDeviceListView;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -41,16 +42,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        mTextMessage = findViewById(R.id.message);
+        BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         bluetoothHandler = new BluetoothHandler(this);
-        bleDeviceListView = (ListView) findViewById(R.id.bleDeviceListView);
     }
 
     public void scanOnClick(final View v){
-        bleDeviceListView.setAdapter(bluetoothHandler.getDeviceListAdapter());
         bluetoothHandler.scanLeDevice(true);
     }
 

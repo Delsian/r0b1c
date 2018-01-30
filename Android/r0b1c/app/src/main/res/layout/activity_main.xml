@@ -12,14 +12,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:onClick="scanOnClick"
-        android:text="scan" />
-
-    <ListView
-        android:id="@+id/bleDeviceListView"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/scanButton"
-        android:layout_below="@+id/scanButton"
+        android:text="scan"
+        tools:layout_editor_absoluteX="16dp"
         />
 
     <android.support.design.widget.BottomNavigationView
