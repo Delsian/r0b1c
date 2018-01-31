@@ -37,7 +37,7 @@ public class BluetoothHandler {
     private static final String LOG_TAG = "BluetoothHandler";
     private static final long SCAN_PERIOD = 2000;
     private static final UUID targetServiceUuid =
-            UUID.fromString("0000fff0-0000-1000-8000-00805f9b34fb");
+            UUID.fromString("00001523-1212-efde-1523-785feabcd123");
 
     private Context context;
     private boolean mEnabled = false;
@@ -133,6 +133,7 @@ public class BluetoothHandler {
                 final BluetoothDevice bluetoothDevice = result.getDevice();
                 final int rssi = result.getRssi();
 
+                Log.i(LOG_TAG, "result "+bluetoothDevice.getName());
                 ((MainActivity)context).runOnUiThread(new Runnable() {
                     @Override
                     public void run() {

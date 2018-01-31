@@ -47,9 +47,6 @@ public class MainActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         bluetoothHandler = new BluetoothHandler(this);
-    }
-
-    public void scanOnClick(final View v){
         bluetoothHandler.scanLeDevice(true);
     }
 
