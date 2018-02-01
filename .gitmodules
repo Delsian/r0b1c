@@ -1,0 +1,3 @@
+[submodule "Fw/controller"]
+	path = Fw/controller
+	url = git@github.com:Delsian/nrf52l.git
