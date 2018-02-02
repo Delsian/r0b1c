@@ -4,3 +4,6 @@
 [submodule "3D"]
 	path = 3D
 	url = git@github.com:Delsian/r0b1c3D.git
+[submodule "Fw/bootloader"]
+	path = Fw/bootloader
+	url = git@github.com:Delsian/nrf52boot.git
