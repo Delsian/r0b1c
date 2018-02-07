@@ -1,0 +1,55 @@
+          +------------+
+          |  Antenna   |
+1  P24    |            |  P25
+2  P23    |            |  P26                     
+3  P22    |            |  P27
+4  P21    |            |  P
+5  P20    |            |  P29
+6  P19    |            |  P30
+7  P17    |            |  P31
+8  P16    |            |  P02
+9  P15    |            |
+10
+11
+12
+13 P08
+14 VCC    +-----------+  GND
+
+
+
+   TFT    Joy
+1  x      Up
+2  LED-   GND btn
+3  LED+   Left
+4  Reset  Center 
+5  A0     VCC LED
+6  SDA    --
+7  SCK    Blue
+8  VCC    Red
+9  CS     Green
+10 --     Down
+11 GND    Right
+
+
+
+PCA9685
+1 xx
+2 VCC 
+3
+4 GND
+5 buzzer
+6 I2C 1
+7 I2C 2
+8
+9
+10
+11
+12 A_BATT
+13 BUTTON
+14 PWR_ON
+15 SCL
+16 SDA
+
+
+
+

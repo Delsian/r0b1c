@@ -12,6 +12,16 @@
 #define NRF_STRERROR_ENABLED 1
 #endif
 
+
+// </e>
+
+// <q> NRF_FPRINTF_ENABLED  - nrf_fprintf - fprintf function.
+
+
+#ifndef NRF_FPRINTF_ENABLED
+#define NRF_FPRINTF_ENABLED 1
+#endif
+
 // <h> nRF_Log
 
 //==========================================================
