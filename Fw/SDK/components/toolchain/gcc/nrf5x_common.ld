@@ -89,6 +89,10 @@ SECTIONS
 
     __etext = .;
 
+    .rtt :
+    {
+    } > RAM
+
     .data : AT (__etext)
     {
         __data_start__ = .;
