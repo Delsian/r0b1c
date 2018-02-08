@@ -905,19 +905,25 @@
 // <q> BLE_LBS_C_ENABLED  - ble_lbs_c - Nordic LED Button Service Client
 
 #ifndef BLE_LBS_C_ENABLED
-#define BLE_LBS_C_ENABLED 1
+#define BLE_LBS_C_ENABLED 0
 #endif
 
 // <q> BLE_LBS_ENABLED  - ble_lbs - LED Button Service
 
 #ifndef BLE_LBS_ENABLED
-#define BLE_LBS_ENABLED 1
+#define BLE_LBS_ENABLED 0
 #endif
 
 // <q> BLE_BAS_ENABLED  - ble_bas - Battery Service
 
 #ifndef BLE_BAS_ENABLED
 #define BLE_BAS_ENABLED 1
+#endif
+
+// <q> BLE_DIS_ENABLED
+
+#ifndef BLE_DIS_ENABLED
+#define BLE_DIS_ENABLED 1
 #endif
 
 // <q> BLE_NUS_ENABLED  - ble_nus - Nordic UART Service
