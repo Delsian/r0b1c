@@ -580,7 +580,9 @@ bool nrf_dfu_app_is_valid(void)
         {
             // CRC does not match with what is stored.
             NRF_LOG_DEBUG("Return false in CRC");
+#ifndef NRF_DFU_DEBUG_VERSION
             return  false;
+#endif
         }
     }
 

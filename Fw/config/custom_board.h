@@ -60,8 +60,8 @@ extern "C" {
 #define BUTTON1     17
 
 //== Fake define - only for compilation. Put unused numbers here
-#define BSP_LED_0 10
-#define BSP_LED_1 11
+//#define BSP_LED_0 10
+//#define BSP_LED_1 11
 //=====
 
 #define RX_PIN_NUMBER  11

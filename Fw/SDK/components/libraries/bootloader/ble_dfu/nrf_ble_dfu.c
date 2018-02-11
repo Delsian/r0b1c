@@ -57,9 +57,12 @@
 #include "nrf_dfu_svci.h"
 #include "nrf_dfu_settings.h"
 
-
+#ifdef BSP_LED_0
 #define ADVERTISING_LED_PIN_NO              BSP_LED_0                                               /**< Is on when device is advertising. */
+#endif
+#ifdef BSP_LED_1
 #define CONNECTED_LED_PIN_NO                BSP_LED_1                                               /**< Is on when device has connected. */
+#endif
 
 #define DEVICE_NAME                         "DfuTarg"                                               /**< Name of device included in the advertising data. Must be shorter than or equal to 20 bytes. */
 #define MANUFACTURER_NAME                   "NordicSemiconductor"                                   /**< Manufacturer. Will be passed to Device Information Service. */
@@ -125,6 +128,26 @@ static ble_gap_id_key_t    const * m_gap_ids[1];
 static nrf_dfu_adv_name_t          m_adv_name;
 #endif
 
+
+__WEAK void nrf_dfu_advertising_led(uint8_t state)
+{
+#ifdef ADVERTISING_LED_PIN_NO
+	if (state)
+		nrf_gpio_pin_set(ADVERTISING_LED_PIN_NO);
+	else
+		nrf_gpio_pin_clear(ADVERTISING_LED_PIN_NO);
+#endif
+}
+
+__WEAK void nrf_dfu_connected_led(uint8_t state)
+{
+#ifdef CONNECTED_LED_PIN_NO
+	if (state)
+		nrf_gpio_pin_set(CONNECTED_LED_PIN_NO);
+	else
+		nrf_gpio_pin_clear(CONNECTED_LED_PIN_NO);
+#endif
+}
 
 /**@brief     Function for the Advertising functionality initialization.
  *
@@ -220,8 +243,8 @@ static uint32_t advertising_start(void)
     err_code = sd_ble_gap_adv_start(&adv_params, APP_BLE_CONN_CFG_TAG);
     VERIFY_SUCCESS(err_code);
 
-    nrf_gpio_pin_clear(ADVERTISING_LED_PIN_NO);
-    nrf_gpio_pin_set(CONNECTED_LED_PIN_NO);
+    nrf_dfu_advertising_led(0);
+    nrf_dfu_connected_led(1);
 
     return NRF_SUCCESS;
 }
@@ -232,7 +255,7 @@ static uint32_t advertising_start(void)
 static void advertising_stop(void)
 {
     (void)sd_ble_gap_adv_stop();
-    nrf_gpio_pin_set(ADVERTISING_LED_PIN_NO);
+    nrf_dfu_advertising_led(1);
 
 }
 
@@ -660,8 +683,8 @@ static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
     {
         case BLE_GAP_EVT_CONNECTED:
         {
-            nrf_gpio_pin_clear(CONNECTED_LED_PIN_NO);
-            nrf_gpio_pin_set(ADVERTISING_LED_PIN_NO);
+            nrf_dfu_connected_led(0);
+            nrf_dfu_advertising_led(1);
 
             m_conn_handle = p_ble_evt->evt.gap_evt.conn_handle;
         } break;
@@ -669,7 +692,7 @@ static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
         case BLE_GAP_EVT_DISCONNECTED:
         {
             // Restart advertising so that the DFU Controller can reconnect if possible.
-            nrf_gpio_pin_set(CONNECTED_LED_PIN_NO);
+            nrf_dfu_connected_led(1);
 
             if ((m_flags & DFU_BLE_RESETTING_SOON) == 0)
             {
@@ -868,10 +891,14 @@ static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
  */
 static void leds_init(void)
 {
+#ifdef ADVERTISING_LED_PIN_NO
     nrf_gpio_cfg_output(ADVERTISING_LED_PIN_NO);
-    nrf_gpio_cfg_output(CONNECTED_LED_PIN_NO);
     nrf_gpio_pin_set(ADVERTISING_LED_PIN_NO);
+#endif
+#ifdef CONNECTED_LED_PIN_NO
+    nrf_gpio_cfg_output(CONNECTED_LED_PIN_NO);
     nrf_gpio_pin_set(CONNECTED_LED_PIN_NO);
+#endif
 }
 
 
