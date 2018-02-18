@@ -59,10 +59,29 @@ extern "C" {
 #define PWR_ON		30
 #define BUTTON1     17
 
-//== Fake define - only for compilation. Put unused numbers here
-//#define BSP_LED_0 10
-//#define BSP_LED_1 11
-//=====
+
+//=== PCA config ===
+#define PCA9685_LEDR				0
+#define PCA9685_LEDG				1
+#define PCA9685_LEDB				15
+
+#define PCA9685_PWMA				2
+#define PCA9685_IN1A				3
+#define PCA9685_IN2A				4
+
+#define PCA9685_PWMB				5
+#define PCA9685_IN1B				6
+#define PCA9685_IN2B				7
+
+#define PCA9685_PWMC				8
+#define PCA9685_IN1C				9
+#define PCA9685_IN2C				10
+
+#define PCA9685_PWMD				11
+#define PCA9685_IN1D				12
+#define PCA9685_IN2D				13
+
+//===== Not used
 
 #define RX_PIN_NUMBER  11
 #define TX_PIN_NUMBER  9
