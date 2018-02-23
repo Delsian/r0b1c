@@ -1,42 +1,4 @@
-/**
- * Copyright (c) 2014 - 2017, Nordic Semiconductor ASA
- * 
- * All rights reserved.
- * 
- * Redistribution and use in source and binary forms, with or without modification,
- * are permitted provided that the following conditions are met:
- * 
- * 1. Redistributions of source code must retain the above copyright notice, this
- *    list of conditions and the following disclaimer.
- * 
- * 2. Redistributions in binary form, except as embedded into a Nordic
- *    Semiconductor ASA integrated circuit in a product or a software update for
- *    such product, must reproduce the above copyright notice, this list of
- *    conditions and the following disclaimer in the documentation and/or other
- *    materials provided with the distribution.
- * 
- * 3. Neither the name of Nordic Semiconductor ASA nor the names of its
- *    contributors may be used to endorse or promote products derived from this
- *    software without specific prior written permission.
- * 
- * 4. This software, with or without modification, must only be used with a
- *    Nordic Semiconductor ASA integrated circuit.
- * 
- * 5. Any software provided in binary form under this license must not be reverse
- *    engineered, decompiled, modified and/or disassembled.
- * 
- * THIS SOFTWARE IS PROVIDED BY NORDIC SEMICONDUCTOR ASA "AS IS" AND ANY EXPRESS
- * OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
- * OF MERCHANTABILITY, NONINFRINGEMENT, AND FITNESS FOR A PARTICULAR PURPOSE ARE
- * DISCLAIMED. IN NO EVENT SHALL NORDIC SEMICONDUCTOR ASA OR CONTRIBUTORS BE
- * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
- * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
- * GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
- * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
- * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- * 
- */
+
 #ifndef CUSTBOARD_H
 #define CUSTBOARD_H
 
@@ -49,37 +11,54 @@ extern "C" {
 #define LEDS_NUMBER    0
 #define BUTTONS_NUMBER 0
 
-#define TWI0_SCL	26
-#define TWI0_SDA	27
+#define TWI0_SCL		6
+#define TWI0_SDA		7
 
-#define BUZZER_PWM		23
+#define BUZZER_PWM		8
+#define PWR_ON			27
+#define BUTTON1     	28
+#define PIN_CHRG		29
+#define PIN_STDBY		22
+#define MPU_INT			20
 
-#define VBAT_AIN		NRF_SAADC_INPUT_AIN5
+//=== External outputs
+#define PIN_EXT0		11
+#define PIN_EXT1		12
+#define PIN_EXT2		13
+#define PIN_EXT3		14
+#define PIN_EXT4		15
+#define PIN_EXT5		16
+#define PIN_EXT6		17
+#define PIN_EXT7		19
 
-#define PWR_ON		30
-#define BUTTON1     17
+//=== Analog inputs
+#define AM0_AIN			NRF_SAADC_INPUT_AIN0
+#define AM1_AIN			NRF_SAADC_INPUT_AIN1
+#define AM2_AIN			NRF_SAADC_INPUT_AIN6
+#define AM3_AIN			NRF_SAADC_INPUT_AIN7
+#define VBAT_AIN		NRF_SAADC_INPUT_AIN2
 
 
 //=== PCA config ===
-#define PCA9685_LEDR				0
-#define PCA9685_LEDG				1
-#define PCA9685_LEDB				15
+#define PCA9685_LEDR				15
+#define PCA9685_LEDG				13
+#define PCA9685_LEDB				14
 
-#define PCA9685_PWMA				2
-#define PCA9685_IN1A				3
-#define PCA9685_IN2A				4
+#define PCA9685_PWMA				0
+#define PCA9685_IN1A				2
+#define PCA9685_IN2A				1
 
 #define PCA9685_PWMB				5
-#define PCA9685_IN1B				6
-#define PCA9685_IN2B				7
+#define PCA9685_IN1B				3
+#define PCA9685_IN2B				4
 
-#define PCA9685_PWMC				8
-#define PCA9685_IN1C				9
-#define PCA9685_IN2C				10
+#define PCA9685_PWMC				6
+#define PCA9685_IN1C				8
+#define PCA9685_IN2C				7
 
 #define PCA9685_PWMD				11
-#define PCA9685_IN1D				12
-#define PCA9685_IN2D				13
+#define PCA9685_IN1D				9
+#define PCA9685_IN2D				10
 
 //===== Not used
 
