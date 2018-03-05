@@ -40,9 +40,9 @@ extern "C" {
 
 
 //=== PCA config ===
-#define PCA9685_LEDR				15
+#define PCA9685_LEDR				14
 #define PCA9685_LEDG				13
-#define PCA9685_LEDB				14
+#define PCA9685_LEDB				15
 
 #define PCA9685_PWMA				0
 #define PCA9685_IN1A				2
@@ -97,16 +97,6 @@ extern "C" {
 #define SER_APP_SPIM0_SS_PIN        25    // SPI Slave Select GPIO pin number
 #define SER_APP_SPIM0_RDY_PIN       29    // SPI READY GPIO pin number
 #define SER_APP_SPIM0_REQ_PIN       28    // SPI REQUEST GPIO pin number
-
-// Low frequency clock source to be used by the SoftDevice
-#ifdef S210
-#define NRF_CLOCK_LFCLKSRC      NRF_CLOCK_LFCLKSRC_XTAL_20_PPM
-#else
-#define NRF_CLOCK_LFCLKSRC      {.source        = NRF_CLOCK_LF_SRC_XTAL,            \
-                                 .rc_ctiv       = 0,                                \
-                                 .rc_temp_ctiv  = 0,                                \
-                                 .xtal_accuracy = NRF_CLOCK_LF_XTAL_ACCURACY_20_PPM}
-#endif
 
 #ifdef __cplusplus
 }
