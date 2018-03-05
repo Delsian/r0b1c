@@ -213,6 +213,10 @@
 
 // </e>
 
+#ifndef PWM_ENABLED
+#define PWM_ENABLED 1
+#endif
+
 //============= HW
 #ifndef NRF_PWR_MGMT_ENABLED
 #define NRF_PWR_MGMT_ENABLED 1
