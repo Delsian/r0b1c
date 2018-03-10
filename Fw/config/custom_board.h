@@ -40,9 +40,9 @@ extern "C" {
 
 
 //=== PCA config ===
-#define PCA9685_LEDR				14
+#define PCA9685_LEDR				15
 #define PCA9685_LEDG				13
-#define PCA9685_LEDB				15
+#define PCA9685_LEDB				14
 
 #define PCA9685_PWMA				0
 #define PCA9685_IN1A				2
