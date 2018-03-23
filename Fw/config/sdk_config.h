@@ -852,7 +852,9 @@
 
 
 //========== Libs
-
+#ifndef NRF_FDS_ENABLED
+#define NRF_FDS_ENABLED 1
+#endif
 // <e> NRF_BALLOC_ENABLED - nrf_balloc - Block allocator module
 //==========================================================
 #ifndef NRF_BALLOC_ENABLED
