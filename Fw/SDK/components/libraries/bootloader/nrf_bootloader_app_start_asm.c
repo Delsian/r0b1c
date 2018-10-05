@@ -124,7 +124,7 @@ void __attribute__ ((noinline)) nrf_bootloader_app_start_impl(uint32_t start_add
         "bx    r0\t\n"                  // No return - Handler mode will be exited. Stack will be popped and execution will continue in reset handler initializing other application.
         ".align\t\n"
         :: "r" (start_addr)             // Argument list for the gcc assembly. start_addr is %0.
-        :  "r0", "r4", "r5", "r6", "r7" // List of register maintained manually.
+        :  "r0", "r4", "r5", "r6" // List of register maintained manually.
     );
 }
 
