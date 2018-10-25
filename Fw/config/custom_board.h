@@ -10,6 +10,7 @@ extern "C" {
 
 #define LEDS_NUMBER    0
 #define BUTTONS_NUMBER 0
+#define BUTTON_PULL    NRF_GPIO_PIN_PULLUP
 
 #define TWI0_SCL		6
 #define TWI0_SDA		7

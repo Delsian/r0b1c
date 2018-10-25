@@ -42,6 +42,7 @@
 #define NRF_DRV_TWI_H__
 
 #include <nrfx.h>
+typedef uint32_t ret_code_t;
 #ifdef TWIM_PRESENT
     #include <nrfx_twim.h>
 #else

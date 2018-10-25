@@ -40,6 +40,22 @@
 #define NRF_LOG_BACKEND_RTT_TEMP_BUFFER_SIZE 64
 #endif
 
+// <o> NRF_LOG_BACKEND_RTT_TX_RETRY_DELAY_MS - Period before retrying writing to RTT 
+#ifndef NRF_LOG_BACKEND_RTT_TX_RETRY_DELAY_MS
+#define NRF_LOG_BACKEND_RTT_TX_RETRY_DELAY_MS 5
+#endif
+
+// <o> NRF_LOG_BACKEND_RTT_TX_RETRY_CNT - Writing to RTT retries. 
+// <i> If RTT fails to accept any new data after retries
+// <i> module assumes that host is not active and on next
+// <i> request it will perform only one write attempt.
+// <i> On successful writing, module assumes that host is active
+// <i> and scheme with retry is applied again.
+
+#ifndef NRF_LOG_BACKEND_RTT_TX_RETRY_CNT
+#define NRF_LOG_BACKEND_RTT_TX_RETRY_CNT 3
+#endif
+
 // </e>
 
 // <h> nrf_log - Logger
@@ -142,6 +158,20 @@
 
 #ifndef NRF_LOG_BUFSIZE
 #define NRF_LOG_BUFSIZE 1024
+#endif
+
+// <o> NRF_LOG_STR_PUSH_BUFFER_SIZE  - Size of the buffer dedicated for strings stored using @ref NRF_LOG_PUSH.
+ 
+// <16=> 16 
+// <32=> 32 
+// <64=> 64 
+// <128=> 128 
+// <256=> 256 
+// <512=> 512 
+// <1024=> 1024 
+
+#ifndef NRF_LOG_STR_PUSH_BUFFER_SIZE
+#define NRF_LOG_STR_PUSH_BUFFER_SIZE 128
 #endif
 
 // <q> NRF_LOG_ALLOW_OVERFLOW  - Configures behavior when circular buffer is full.

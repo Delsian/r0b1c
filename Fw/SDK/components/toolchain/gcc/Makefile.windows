@@ -1,3 +1,0 @@
-GNU_INSTALL_ROOT := C:/Program Files (x86)/GNU Tools ARM Embedded/6.2 2016q4/bin/
-GNU_VERSION := 6.2.4
-GNU_PREFIX := arm-none-eabi
