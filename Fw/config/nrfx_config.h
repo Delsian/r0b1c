@@ -1921,13 +1921,13 @@
 // <e> NRFX_SWI_ENABLED - nrfx_swi - SWI/EGU peripheral allocator
 //==========================================================
 #ifndef NRFX_SWI_ENABLED
-#define NRFX_SWI_ENABLED 0
+#define NRFX_SWI_ENABLED 1
 #endif
 // <q> NRFX_EGU_ENABLED  - Enable EGU support
 
 
 #ifndef NRFX_EGU_ENABLED
-#define NRFX_EGU_ENABLED 0
+#define NRFX_EGU_ENABLED 1
 #endif
 
 // <q> NRFX_SWI0_DISABLED  - Exclude SWI0 from being utilized by the driver
@@ -1975,7 +1975,7 @@
 // <e> NRFX_SWI_CONFIG_LOG_ENABLED - Enables logging in the module.
 //==========================================================
 #ifndef NRFX_SWI_CONFIG_LOG_ENABLED
-#define NRFX_SWI_CONFIG_LOG_ENABLED 0
+#define NRFX_SWI_CONFIG_LOG_ENABLED 1
 #endif
 // <o> NRFX_SWI_CONFIG_LOG_LEVEL  - Default Severity level
 
@@ -1986,7 +1986,7 @@
 // <4=> Debug
 
 #ifndef NRFX_SWI_CONFIG_LOG_LEVEL
-#define NRFX_SWI_CONFIG_LOG_LEVEL 3
+#define NRFX_SWI_CONFIG_LOG_LEVEL 4
 #endif
 
 // <o> NRFX_SWI_CONFIG_INFO_COLOR  - ANSI escape code prefix.
@@ -2127,7 +2127,7 @@
 // <e> NRFX_TIMER_CONFIG_LOG_ENABLED - Enables logging in the module.
 //==========================================================
 #ifndef NRFX_TIMER_CONFIG_LOG_ENABLED
-#define NRFX_TIMER_CONFIG_LOG_ENABLED 0
+#define NRFX_TIMER_CONFIG_LOG_ENABLED 1
 #endif
 // <o> NRFX_TIMER_CONFIG_LOG_LEVEL  - Default Severity level
 
@@ -2138,7 +2138,7 @@
 // <4=> Debug
 
 #ifndef NRFX_TIMER_CONFIG_LOG_LEVEL
-#define NRFX_TIMER_CONFIG_LOG_LEVEL 3
+#define NRFX_TIMER_CONFIG_LOG_LEVEL 4
 #endif
 
 // <o> NRFX_TIMER_CONFIG_INFO_COLOR  - ANSI escape code prefix.
@@ -2303,14 +2303,14 @@
 
 
 #ifndef NRFX_TWIS0_ENABLED
-#define NRFX_TWIS0_ENABLED 1
+#define NRFX_TWIS0_ENABLED 0
 #endif
 
 // <q> NRFX_TWIS1_ENABLED  - Enable TWIS1 instance
 
 
 #ifndef NRFX_TWIS1_ENABLED
-#define NRFX_TWIS1_ENABLED 1
+#define NRFX_TWIS1_ENABLED 0
 #endif
 
 // <q> NRFX_TWIS_ASSUME_INIT_AFTER_RESET_ONLY  - Assume that any instance would be initialized only once
