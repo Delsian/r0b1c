@@ -47,21 +47,21 @@ ENDIF()
 SET(CMAKE_CXX_FLAGS
     "-mthumb -mcpu=cortex-m4 \
     -fno-builtin -fomit-frame-pointer \
-    -ffunction-sections -fdata-sections \
+    -ffunction-sections -fdata-sections -flto \
     -fno-strict-aliasing -fshort-enums \
     -Wall -Wno-pointer-sign -mabi=aapcs \
     -mfpu=fpv4-sp-d16 -mfloat-abi=hard \
     -O0 -g3")
 SET(CMAKE_C_FLAGS
-    "${CMAKE_CXX_FLAGS} -std=gnu99")
+    "${CMAKE_CXX_FLAGS}")
 SET(CMAKE_ASM_FLAGS 
-    "-MP -MD -std=c99 -x assembler-with-cpp")
+    "-MP -MD -x assembler-with-cpp")
 set(CMAKE_EXE_LINKER_FLAGS
     "-mthumb -mabi=aapcs -mfpu=fpv4-sp-d16 \
-    -std=gnu++98 -std=c99 \
+    -std=gnu++98 \
     -L ${SDK_MOD_DIR}mdk -L ../config \
     -T${LINKER_SCRIPT} -Wl,--gc-sections \
-    --specs=nano.specs -lc -lnosys -lm")
+    --specs=nano.specs")
 
 # Startup
 SET(NRF52_STARTUP ${SDK_DIR}/modules/nrfx/mdk/gcc_startup_nrf52.S)
@@ -80,7 +80,7 @@ else()
 	set(NRFJPROG_DIR /opt/nrfjprog/nrfjprog)
 endif()
 SET(NRFJPROG ${NRFJPROG_DIR}/nrfjprog)
-SET(NRFUTIL_PATH ${SDK_DIR}/external_tools/nrfutil.exe)
+SET(NRFUTIL ${SDK_DIR}/external_tools/nrfutil.exe)
 
 # Bootloader settings
 SET(SETTINGS_HEX "../config/settings.hex")

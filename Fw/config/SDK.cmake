@@ -131,6 +131,7 @@ SET(SDK_LIB_SOURCES
     ${SDK_LIB_DIR}ringbuf/nrf_ringbuf.c
     ${SDK_LIB_DIR}scheduler/app_scheduler.c
     ${SDK_LIB_DIR}strerror/nrf_strerror.c
+    ${SDK_LIB_DIR}svc/nrf_svc_handler.c
     ${SDK_LIB_DIR}timer/app_timer.c
     ${SDK_LIB_DIR}twi_mngr/nrf_twi_mngr.c
     ${SDK_LIB_DIR}util/app_error.c
@@ -160,12 +161,10 @@ SET(SDK_BOOT_SOURCES
     ${SDK_LIB_DIR}bootloader/dfu/nrf_dfu_mbr.c
     ${SDK_LIB_DIR}bootloader/dfu/nrf_dfu_req_handler.c
     ${SDK_LIB_DIR}bootloader/dfu/nrf_dfu_settings.c
-    ${SDK_LIB_DIR}bootloader/dfu/nrf_dfu_settings_svci.c
     ${SDK_LIB_DIR}bootloader/dfu/nrf_dfu_transport.c
     ${SDK_LIB_DIR}bootloader/dfu/nrf_dfu_utils.c
     ${SDK_LIB_DIR}bootloader/dfu/nrf_dfu_validation.c
     ${SDK_LIB_DIR}bootloader/dfu/nrf_dfu_ver_validation.c
-    ${SDK_LIB_DIR}bootloader/dfu/nrf_dfu_svci_handler.c
 	)
 
 SET(SDK_CRYPTO_SOURCES
@@ -303,6 +302,9 @@ SET(SDK_BLE_SOURCES
     ${SDK_SD_DIR}../common/nrf_sdh.c
     ${SDK_SD_DIR}../common/nrf_sdh_ble.c
     ${SDK_SD_DIR}../common/nrf_sdh_soc.c
+    ${SDK_LIB_DIR}bootloader/dfu/nrf_dfu_svci.c
+    ${SDK_LIB_DIR}bootloader/dfu/nrf_dfu_svci_handler.c
+    ${SDK_LIB_DIR}bootloader/dfu/nrf_dfu_settings_svci.c
     )
 
 AUX_SOURCE_DIRECTORY(${SDK_MOD_DIR}drivers/src/ SDK_MOD_DRV_SOURCES)
