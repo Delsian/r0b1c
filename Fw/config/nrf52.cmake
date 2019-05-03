@@ -1,4 +1,5 @@
 set(TARGET_PLATFORM "NRF52" CACHE STRING "Target platform")
+#SET(CMAKE_ECLIPSE_VERSION 4.11) 
 
 # Toolchain location
 if (NOT "$ENV{TOOLCHAIN_DIR}" STREQUAL "")
@@ -61,6 +62,7 @@ set(CMAKE_EXE_LINKER_FLAGS
     -std=gnu++98 \
     -L ${SDK_MOD_DIR}mdk -L ../config \
     -T${LINKER_SCRIPT} -Wl,--gc-sections \
+    -Wl,-Map=${CMAKE_PROJECT_NAME}.map \
     --specs=nano.specs")
 
 # Startup

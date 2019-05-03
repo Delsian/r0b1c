@@ -118,7 +118,7 @@ SET(SDK_LIB_SOURCES
     ${SDK_LIB_DIR}crc16/crc16.c
     ${SDK_LIB_DIR}crc32/crc32.c
     ${SDK_LIB_DIR}experimental_section_vars/nrf_section_iter.c
-    ${SDK_LIB_DIR}fds/fds.c
+    #${SDK_LIB_DIR}fds/fds.c
     ${SDK_LIB_DIR}fstorage/nrf_fstorage.c
     ${SDK_LIB_DIR}fstorage/nrf_fstorage_nvmc.c
     ${SDK_LIB_DIR}fstorage/nrf_fstorage_sd.c

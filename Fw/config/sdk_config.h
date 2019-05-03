@@ -1187,7 +1187,7 @@
 // <i> Enable this setting if you need secp256r1 curve support using Oberon library
 
 #ifndef NRF_CRYPTO_BACKEND_OBERON_ECC_SECP256R1_ENABLED
-#define NRF_CRYPTO_BACKEND_OBERON_ECC_SECP256R1_ENABLED 0
+#define NRF_CRYPTO_BACKEND_OBERON_ECC_SECP256R1_ENABLED 1
 #endif
 
 // <q> NRF_CRYPTO_BACKEND_OBERON_ECC_CURVE25519_ENABLED  - Enable Curve25519 ECDH
@@ -1214,7 +1214,7 @@
 // <i> Oberon backend implementation for SHA-256.
 
 #ifndef NRF_CRYPTO_BACKEND_OBERON_HASH_SHA256_ENABLED
-#define NRF_CRYPTO_BACKEND_OBERON_HASH_SHA256_ENABLED 0
+#define NRF_CRYPTO_BACKEND_OBERON_HASH_SHA256_ENABLED 1
 #endif
 
 // <q> NRF_CRYPTO_BACKEND_OBERON_HASH_SHA512_ENABLED  - Oberon SHA-512 hash functionality
@@ -12119,6 +12119,210 @@
 // </e>
 
 // </h> 
+//==========================================================
+
+// <h> nRF_Bootloader
+
+//==========================================================
+// <h> nrf_bootloader - Bootloader settings
+
+//==========================================================
+// <h> Application integrity checks
+
+//==========================================================
+// <q> NRF_BL_APP_CRC_CHECK_SKIPPED_ON_GPREGRET2  - Skip CRC integrity check of the application when bit 1 (0-indexed) is set in the GPREGRET2 register.
+
+
+// <i> Only CRC checks can be skipped. For other boot validation types, the GPREGRET2 register is ignored.
+
+#ifndef NRF_BL_APP_CRC_CHECK_SKIPPED_ON_GPREGRET2
+#define NRF_BL_APP_CRC_CHECK_SKIPPED_ON_GPREGRET2 1
+#endif
+
+// <q> NRF_BL_APP_CRC_CHECK_SKIPPED_ON_SYSTEMOFF_RESET  - Skip integrity check of the application when waking up from the System Off state.
+
+
+// <i> Only CRC checks can be skipped. For other boot validation types, the reset state is ignored.
+
+#ifndef NRF_BL_APP_CRC_CHECK_SKIPPED_ON_SYSTEMOFF_RESET
+#define NRF_BL_APP_CRC_CHECK_SKIPPED_ON_SYSTEMOFF_RESET 1
+#endif
+
+// <q> NRF_BL_APP_SIGNATURE_CHECK_REQUIRED  - Perform signature check on the app. Requires the signature to be sent in the init packet.
+
+
+#ifndef NRF_BL_APP_SIGNATURE_CHECK_REQUIRED
+#define NRF_BL_APP_SIGNATURE_CHECK_REQUIRED 0
+#endif
+
+// <q> NRF_BL_DFU_ALLOW_UPDATE_FROM_APP  - Whether to allow the app to receive firmware updates for the bootloader to activate.
+
+
+// <i> Enable this to allow the app to instruct the bootloader to activate firmware.
+// <i> The bootloader will do its own postvalidation.
+
+#ifndef NRF_BL_DFU_ALLOW_UPDATE_FROM_APP
+#define NRF_BL_DFU_ALLOW_UPDATE_FROM_APP 0
+#endif
+
+// </h>
+//==========================================================
+
+// <h> DFU mode enter method
+
+//==========================================================
+// <e> NRF_BL_DFU_ENTER_METHOD_BUTTON - Enter DFU mode on button press.
+//==========================================================
+#ifndef NRF_BL_DFU_ENTER_METHOD_BUTTON
+#define NRF_BL_DFU_ENTER_METHOD_BUTTON 0
+#endif
+// <o> NRF_BL_DFU_ENTER_METHOD_BUTTON_PIN  - Button for entering DFU mode.
+
+// <0=> 0 (P0.0)
+// <1=> 1 (P0.1)
+// <2=> 2 (P0.2)
+// <3=> 3 (P0.3)
+// <4=> 4 (P0.4)
+// <5=> 5 (P0.5)
+// <6=> 6 (P0.6)
+// <7=> 7 (P0.7)
+// <8=> 8 (P0.8)
+// <9=> 9 (P0.9)
+// <10=> 10 (P0.10)
+// <11=> 11 (P0.11)
+// <12=> 12 (P0.12)
+// <13=> 13 (P0.13)
+// <14=> 14 (P0.14)
+// <15=> 15 (P0.15)
+// <16=> 16 (P0.16)
+// <17=> 17 (P0.17)
+// <18=> 18 (P0.18)
+// <19=> 19 (P0.19)
+// <20=> 20 (P0.20)
+// <21=> 21 (P0.21)
+// <22=> 22 (P0.22)
+// <23=> 23 (P0.23)
+// <24=> 24 (P0.24)
+// <25=> 25 (P0.25)
+// <26=> 26 (P0.26)
+// <27=> 27 (P0.27)
+// <28=> 28 (P0.28)
+// <29=> 29 (P0.29)
+// <30=> 30 (P0.30)
+// <31=> 31 (P0.31)
+// <32=> 32 (P1.0)
+// <33=> 33 (P1.1)
+// <34=> 34 (P1.2)
+// <35=> 35 (P1.3)
+// <36=> 36 (P1.4)
+// <37=> 37 (P1.5)
+// <38=> 38 (P1.6)
+// <39=> 39 (P1.7)
+// <40=> 40 (P1.8)
+// <41=> 41 (P1.9)
+// <42=> 42 (P1.10)
+// <43=> 43 (P1.11)
+// <44=> 44 (P1.12)
+// <45=> 45 (P1.13)
+// <46=> 46 (P1.14)
+// <47=> 47 (P1.15)
+
+#ifndef NRF_BL_DFU_ENTER_METHOD_BUTTON_PIN
+#define NRF_BL_DFU_ENTER_METHOD_BUTTON_PIN 25
+#endif
+
+// </e>
+
+// <q> NRF_BL_DFU_ENTER_METHOD_PINRESET  - Enter DFU mode on pin reset.
+
+
+#ifndef NRF_BL_DFU_ENTER_METHOD_PINRESET
+#define NRF_BL_DFU_ENTER_METHOD_PINRESET 1
+#endif
+
+// <q> NRF_BL_DFU_ENTER_METHOD_GPREGRET  - Enter DFU mode when bit 1 (0-indexed) is set in the NRF_POWER_GPREGRET register.
+
+
+#ifndef NRF_BL_DFU_ENTER_METHOD_GPREGRET
+#define NRF_BL_DFU_ENTER_METHOD_GPREGRET 0
+#endif
+
+// <q> NRF_BL_DFU_ENTER_METHOD_BUTTONLESS  - Enter DFU mode when the Boolean enter_buttonless_dfu in DFU settings is true.
+
+
+#ifndef NRF_BL_DFU_ENTER_METHOD_BUTTONLESS
+#define NRF_BL_DFU_ENTER_METHOD_BUTTONLESS 0
+#endif
+
+// </h>
+//==========================================================
+
+// <h> DFU timers
+
+//==========================================================
+// <o> NRF_BL_DFU_CONTINUATION_TIMEOUT_MS - Timeout in ms when expecting an update immediately.  <100-60000000>
+
+
+// <i> This timeout is used after updating the SoftDevice, when there is
+// <i> already a valid application present. The bootloader will enter DFU mode
+// <i> for a short time instead of booting the old application to allow the host
+// <i> to immediately transfer a new application if it wishes.
+
+#ifndef NRF_BL_DFU_CONTINUATION_TIMEOUT_MS
+#define NRF_BL_DFU_CONTINUATION_TIMEOUT_MS 10000
+#endif
+
+// <o> NRF_BL_DFU_INACTIVITY_TIMEOUT_MS - Timeout in ms before automatically starting a valid application due to inactivity.  <0-60000000>
+
+
+// <i> If 0, no inactivity timer will be used. Values 1-99 are invalid.
+
+#ifndef NRF_BL_DFU_INACTIVITY_TIMEOUT_MS
+#define NRF_BL_DFU_INACTIVITY_TIMEOUT_MS 0
+#endif
+
+// </h>
+//==========================================================
+
+// <h> Watchdog timer
+
+//==========================================================
+// <o> NRF_BL_WDT_MAX_SCHEDULER_LATENCY_MS - Maximum latency of the scheduler in miliseconds
+// <i> Maximum latency of the scheduler is compared with
+// <i> watchdog counter reload value (CRV). If latency is big
+// <i> enough, the watchdog will be fed from internal timer
+// <i> handler along with feed from user function. If latency
+// <i> is smaller than CRV, the watchdog will not be internally fed once
+// <i> it will be externally fed. Maximum latency is mainly affected
+// <i> by flash operations.
+
+#ifndef NRF_BL_WDT_MAX_SCHEDULER_LATENCY_MS
+#define NRF_BL_WDT_MAX_SCHEDULER_LATENCY_MS 10000
+#endif
+
+// </h>
+//==========================================================
+
+// <h> Misc Bootloader settings
+
+//==========================================================
+// <o> NRF_BL_FW_COPY_PROGRESS_STORE_STEP - Number of pages copied after which progress in the settings page is updated.
+// <i> Progress stored in the settings page allows the bootloader to resume
+// <i> copying the new firmware in case of interruption (reset).
+// <i> If the value is small, then the resume point is more accurate. However,
+// <i>  it also impacts negatively on flash wear.
+
+#ifndef NRF_BL_FW_COPY_PROGRESS_STORE_STEP
+#define NRF_BL_FW_COPY_PROGRESS_STORE_STEP 8
+#endif
+
+// </h>
+//==========================================================
+
+// </h>
+//==========================================================
+
+// </h>
 //==========================================================
 
 // <<< end of configuration section >>>

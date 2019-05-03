@@ -2,6 +2,14 @@
 SECTIONS
 {
   . = ALIGN(4);
+  .rtt :
+  {
+  } > RAM
+} INSERT BEFORE .data;
+  
+SECTIONS
+{
+  . = ALIGN(4);
   .mem_section_dummy_ram :
   {
   }
