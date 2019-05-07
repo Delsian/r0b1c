@@ -7,9 +7,9 @@
 [submodule "Fw/bootloader"]
 	path = Fw/bootloader
 	url = git@github.com:Delsian/nrf52boot.git
-[submodule "Fw/SDK/micro-ecc"]
-	path = Fw/SDK/micro-ecc
-	url = git@github.com:kmackay/micro-ecc.git
+[submodule "Fw/SDK"]
+	path = Fw/SDK
+	url = git@github.com:Delsian/nrf_sdk.git
 [submodule "HostSw/Android"]
 	path = HostSw/Android
 	url = git@github.com:Delsian/r0b1c_android.git
