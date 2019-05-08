@@ -870,7 +870,7 @@
 // <e> NRF_CRYPTO_BACKEND_CIFRA_ENABLED - Enable the Cifra backend.
 //==========================================================
 #ifndef NRF_CRYPTO_BACKEND_CIFRA_ENABLED
-#define NRF_CRYPTO_BACKEND_CIFRA_ENABLED 1
+#define NRF_CRYPTO_BACKEND_CIFRA_ENABLED 0
 #endif
 // <q> NRF_CRYPTO_BACKEND_CIFRA_AES_EAX_ENABLED  - Enable the AES EAX mode using Cifra.
  
@@ -884,7 +884,7 @@
 // <e> NRF_CRYPTO_BACKEND_MBEDTLS_ENABLED - Enable the mbed TLS backend.
 //==========================================================
 #ifndef NRF_CRYPTO_BACKEND_MBEDTLS_ENABLED
-#define NRF_CRYPTO_BACKEND_MBEDTLS_ENABLED 1
+#define NRF_CRYPTO_BACKEND_MBEDTLS_ENABLED 0
 #endif
 // <q> NRF_CRYPTO_BACKEND_MBEDTLS_AES_CBC_ENABLED  - Enable the AES CBC mode mbed TLS.
  
@@ -1091,7 +1091,7 @@
 // <e> NRF_CRYPTO_BACKEND_MICRO_ECC_ENABLED - Enable the micro-ecc backend.
 //==========================================================
 #ifndef NRF_CRYPTO_BACKEND_MICRO_ECC_ENABLED
-#define NRF_CRYPTO_BACKEND_MICRO_ECC_ENABLED 0
+#define NRF_CRYPTO_BACKEND_MICRO_ECC_ENABLED 1
 #endif
 // <q> NRF_CRYPTO_BACKEND_MICRO_ECC_ECC_SECP192R1_ENABLED  - Enable secp192r1 (NIST 192-bit) curve
  
@@ -1136,7 +1136,7 @@
 // <i> The nRF HW backend provide access to RNG peripheral in nRF5x devices.
 //==========================================================
 #ifndef NRF_CRYPTO_BACKEND_NRF_HW_RNG_ENABLED
-#define NRF_CRYPTO_BACKEND_NRF_HW_RNG_ENABLED 1
+#define NRF_CRYPTO_BACKEND_NRF_HW_RNG_ENABLED 0
 #endif
 // <q> NRF_CRYPTO_BACKEND_NRF_HW_RNG_MBEDTLS_CTR_DRBG_ENABLED  - Enable mbed TLS CTR-DRBG algorithm.
  
@@ -1154,7 +1154,7 @@
 // <i> The nRF SW cryptography backend (only used in bootloader context).
 //==========================================================
 #ifndef NRF_CRYPTO_BACKEND_NRF_SW_ENABLED
-#define NRF_CRYPTO_BACKEND_NRF_SW_ENABLED 0
+#define NRF_CRYPTO_BACKEND_NRF_SW_ENABLED 1
 #endif
 // <q> NRF_CRYPTO_BACKEND_NRF_SW_HASH_SHA256_ENABLED  - nRF SW hash backend support for SHA-256
  
@@ -1172,7 +1172,7 @@
 // <i> The Oberon backend
 //==========================================================
 #ifndef NRF_CRYPTO_BACKEND_OBERON_ENABLED
-#define NRF_CRYPTO_BACKEND_OBERON_ENABLED 1
+#define NRF_CRYPTO_BACKEND_OBERON_ENABLED 0
 #endif
 // <q> NRF_CRYPTO_BACKEND_OBERON_CHACHA_POLY_ENABLED  - Enable the CHACHA-POLY mode using Oberon.
  
@@ -1196,7 +1196,7 @@
 // <i> Enable this setting if you need Curve25519 ECDH support using Oberon library
 
 #ifndef NRF_CRYPTO_BACKEND_OBERON_ECC_CURVE25519_ENABLED
-#define NRF_CRYPTO_BACKEND_OBERON_ECC_CURVE25519_ENABLED 1
+#define NRF_CRYPTO_BACKEND_OBERON_ECC_CURVE25519_ENABLED 0
 #endif
 
 // <q> NRF_CRYPTO_BACKEND_OBERON_ECC_ED25519_ENABLED  - Enable Ed25519 signature scheme
@@ -1232,7 +1232,7 @@
 // <i> Oberon backend implementation for HMAC using SHA-256.
 
 #ifndef NRF_CRYPTO_BACKEND_OBERON_HMAC_SHA256_ENABLED
-#define NRF_CRYPTO_BACKEND_OBERON_HMAC_SHA256_ENABLED 1
+#define NRF_CRYPTO_BACKEND_OBERON_HMAC_SHA256_ENABLED 0
 #endif
 
 // <q> NRF_CRYPTO_BACKEND_OBERON_HMAC_SHA512_ENABLED  - Oberon HMAC using SHA-512
@@ -1344,7 +1344,7 @@
 // <i> When signed updates are required, version checking should always be enabled.
 
 #ifndef NRF_DFU_APP_DOWNGRADE_PREVENTION
-#define NRF_DFU_APP_DOWNGRADE_PREVENTION 0
+#define NRF_DFU_APP_DOWNGRADE_PREVENTION 1
 #endif
 
 // <q> NRF_DFU_EXTERNAL_APP_VERSIONING  - Require versioning for external applications.
@@ -1395,7 +1395,7 @@
 // <i> the current app or SoftDevice without knowing the signature key.
 
 #ifndef NRF_DFU_SINGLE_BANK_APP_UPDATES
-#define NRF_DFU_SINGLE_BANK_APP_UPDATES 1
+#define NRF_DFU_SINGLE_BANK_APP_UPDATES 0
 #endif
 
 // </h>
@@ -7352,7 +7352,7 @@
 // <i> Recommended setting: OFF, only enable this setting if size is a major concern.
 
 #ifndef NRF_FSTORAGE_PARAM_CHECK_DISABLED
-#define NRF_FSTORAGE_PARAM_CHECK_DISABLED 0
+#define NRF_FSTORAGE_PARAM_CHECK_DISABLED 1
 #endif
 
 // </h> 
@@ -7384,7 +7384,7 @@
 // <i> That is 1024 bytes for nRF51 ICs and 4096 bytes for nRF52 ICs.
 
 #ifndef NRF_FSTORAGE_SD_MAX_WRITE_SIZE
-#define NRF_FSTORAGE_SD_MAX_WRITE_SIZE 4096
+#define NRF_FSTORAGE_SD_MAX_WRITE_SIZE 1024
 #endif
 
 // </h> 
@@ -11423,7 +11423,7 @@
 
 // <o> NRF_SDH_BLE_GATT_MAX_MTU_SIZE - Static maximum MTU size. 
 #ifndef NRF_SDH_BLE_GATT_MAX_MTU_SIZE
-#define NRF_SDH_BLE_GATT_MAX_MTU_SIZE 23
+#define NRF_SDH_BLE_GATT_MAX_MTU_SIZE 247
 #endif
 
 // <o> NRF_SDH_BLE_GATTS_ATTR_TAB_SIZE - Attribute Table size in bytes. The size must be a multiple of 4. 
@@ -11433,7 +11433,7 @@
 
 // <o> NRF_SDH_BLE_VS_UUID_COUNT - The number of vendor-specific UUIDs. 
 #ifndef NRF_SDH_BLE_VS_UUID_COUNT
-#define NRF_SDH_BLE_VS_UUID_COUNT 0
+#define NRF_SDH_BLE_VS_UUID_COUNT 1
 #endif
 
 // <q> NRF_SDH_BLE_SERVICE_CHANGED  - Include the Service Changed characteristic in the Attribute Table.
@@ -12174,7 +12174,7 @@
 // <e> NRF_BL_DFU_ENTER_METHOD_BUTTON - Enter DFU mode on button press.
 //==========================================================
 #ifndef NRF_BL_DFU_ENTER_METHOD_BUTTON
-#define NRF_BL_DFU_ENTER_METHOD_BUTTON 0
+#define NRF_BL_DFU_ENTER_METHOD_BUTTON 1
 #endif
 // <o> NRF_BL_DFU_ENTER_METHOD_BUTTON_PIN  - Button for entering DFU mode.
 
@@ -12237,7 +12237,7 @@
 
 
 #ifndef NRF_BL_DFU_ENTER_METHOD_PINRESET
-#define NRF_BL_DFU_ENTER_METHOD_PINRESET 1
+#define NRF_BL_DFU_ENTER_METHOD_PINRESET 0
 #endif
 
 // <q> NRF_BL_DFU_ENTER_METHOD_GPREGRET  - Enter DFU mode when bit 1 (0-indexed) is set in the NRF_POWER_GPREGRET register.
@@ -12251,7 +12251,7 @@
 
 
 #ifndef NRF_BL_DFU_ENTER_METHOD_BUTTONLESS
-#define NRF_BL_DFU_ENTER_METHOD_BUTTONLESS 1
+#define NRF_BL_DFU_ENTER_METHOD_BUTTONLESS 0
 #endif
 
 // </h>
@@ -12278,7 +12278,7 @@
 // <i> If 0, no inactivity timer will be used. Values 1-99 are invalid.
 
 #ifndef NRF_BL_DFU_INACTIVITY_TIMEOUT_MS
-#define NRF_BL_DFU_INACTIVITY_TIMEOUT_MS 0
+#define NRF_BL_DFU_INACTIVITY_TIMEOUT_MS 120000
 #endif
 
 // </h>

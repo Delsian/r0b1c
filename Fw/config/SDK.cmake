@@ -130,6 +130,7 @@ SET(SDK_LIB_SOURCES
     ${SDK_LIB_DIR}queue/nrf_queue.c
     ${SDK_LIB_DIR}ringbuf/nrf_ringbuf.c
     ${SDK_LIB_DIR}scheduler/app_scheduler.c
+    ${SDK_LIB_DIR}sha256/sha256.c
     ${SDK_LIB_DIR}strerror/nrf_strerror.c
     ${SDK_LIB_DIR}svc/nrf_svc_handler.c
     ${SDK_LIB_DIR}timer/app_timer.c
@@ -165,23 +166,38 @@ SET(SDK_BOOT_SOURCES
     ${SDK_LIB_DIR}bootloader/dfu/nrf_dfu_utils.c
     ${SDK_LIB_DIR}bootloader/dfu/nrf_dfu_validation.c
     ${SDK_LIB_DIR}bootloader/dfu/nrf_dfu_ver_validation.c
+    ${SDK_LIB_DIR}bootloader/dfu/nrf_dfu_svci.c
+    ${SDK_LIB_DIR}bootloader/dfu/nrf_dfu_svci_handler.c
+    ${SDK_LIB_DIR}crypto/backend/micro_ecc/micro_ecc_backend_ecc.c
+    ${SDK_LIB_DIR}crypto/backend/micro_ecc/micro_ecc_backend_ecdh.c
+    ${SDK_LIB_DIR}crypto/backend/micro_ecc/micro_ecc_backend_ecdsa.c
+    ${SDK_LIB_DIR}crypto/nrf_crypto_init.c
+    ${SDK_LIB_DIR}crypto/nrf_crypto_ecc.c
+    ${SDK_LIB_DIR}crypto/nrf_crypto_ecdsa.c
+    ${SDK_LIB_DIR}crypto/nrf_crypto_hash.c
+    ${SDK_LIB_DIR}crypto/nrf_crypto_shared.c
+    ${SDK_LIB_DIR}crypto/backend/oberon/oberon_backend_ecc.c
+    ${SDK_LIB_DIR}crypto/backend/oberon/oberon_backend_hash.c
+    ${SDK_LIB_DIR}crypto/backend/oberon/oberon_backend_chacha_poly_aead.c
+	${SDK_LIB_DIR}crypto/backend/oberon/oberon_backend_ecdh.c
+	${SDK_LIB_DIR}crypto/backend/oberon/oberon_backend_ecdsa.c
+	${SDK_LIB_DIR}crypto/backend/oberon/oberon_backend_eddsa.c
+	${SDK_LIB_DIR}crypto/backend/oberon/oberon_backend_hmac.c
+	${SDK_LIB_DIR}crypto/backend/nrf_sw/nrf_sw_backend_hash.c
+	${SDK_DIR}/external/nano-pb/pb_common.c
+    ${SDK_DIR}/external/nano-pb/pb_decode.c
 	)
 
 SET(SDK_CRYPTO_SOURCES
     ${SDK_LIB_DIR}crypto/nrf_crypto_aead.c
     ${SDK_LIB_DIR}crypto/nrf_crypto_aes.c
-    ${SDK_LIB_DIR}crypto/nrf_crypto_aes_shared.c
-    ${SDK_LIB_DIR}crypto/nrf_crypto_ecc.c
-    ${SDK_LIB_DIR}crypto/nrf_crypto_ecdh.c
-    ${SDK_LIB_DIR}crypto/nrf_crypto_ecdsa.c
+    ${SDK_LIB_DIR}crypto/nrf_crypto_aes_shared.c    
+    ${SDK_LIB_DIR}crypto/nrf_crypto_ecdh.c   
     ${SDK_LIB_DIR}crypto/nrf_crypto_eddsa.c
     ${SDK_LIB_DIR}crypto/nrf_crypto_error.c
-    ${SDK_LIB_DIR}crypto/nrf_crypto_init.c
-    ${SDK_LIB_DIR}crypto/nrf_crypto_hash.c
     ${SDK_LIB_DIR}crypto/nrf_crypto_hmac.c
     ${SDK_LIB_DIR}crypto/nrf_crypto_hkdf.c
-    ${SDK_LIB_DIR}crypto/nrf_crypto_rng.c
-    ${SDK_LIB_DIR}crypto/nrf_crypto_shared.c
+    ${SDK_LIB_DIR}crypto/nrf_crypto_rng.c   
     ${SDK_LIB_DIR}/crypto/backend/cifra/cifra_backend_aes_aead.c
     ${SDK_LIB_DIR}crypto/backend/mbedtls/mbedtls_backend_aes.c
     ${SDK_LIB_DIR}crypto/backend/mbedtls/mbedtls_backend_ecc.c
@@ -191,24 +207,11 @@ SET(SDK_CRYPTO_SOURCES
     ${SDK_LIB_DIR}crypto/backend/mbedtls/mbedtls_backend_hash.c
     ${SDK_LIB_DIR}crypto/backend/mbedtls/mbedtls_backend_hmac.c
     ${SDK_LIB_DIR}crypto/backend/mbedtls/mbedtls_backend_init.c
-    ${SDK_LIB_DIR}crypto/backend/micro_ecc/micro_ecc_backend_ecc.c
-    ${SDK_LIB_DIR}crypto/backend/micro_ecc/micro_ecc_backend_ecdh.c
-    ${SDK_LIB_DIR}crypto/backend/micro_ecc/micro_ecc_backend_ecdsa.c
     ${SDK_LIB_DIR}crypto/backend/nrf_sw/nrf_sw_backend_hash.c
     ${SDK_LIB_DIR}crypto/backend/nrf_hw/nrf_hw_backend_init.c
 	${SDK_LIB_DIR}crypto/backend/nrf_hw/nrf_hw_backend_rng.c
 	${SDK_LIB_DIR}crypto/backend/nrf_hw/nrf_hw_backend_rng_mbedtls.c
-    ${SDK_LIB_DIR}crypto/backend/oberon/oberon_backend_ecc.c
-    ${SDK_LIB_DIR}crypto/backend/oberon/oberon_backend_hash.c
-    ${SDK_LIB_DIR}crypto/backend/oberon/oberon_backend_chacha_poly_aead.c
-	${SDK_LIB_DIR}crypto/backend/oberon/oberon_backend_ecdh.c
-	${SDK_LIB_DIR}crypto/backend/oberon/oberon_backend_ecdsa.c
-	${SDK_LIB_DIR}crypto/backend/oberon/oberon_backend_eddsa.c
-	${SDK_LIB_DIR}crypto/backend/oberon/oberon_backend_hmac.c
     ${SDK_LIB_DIR}ecc/ecc.c
-    ${SDK_LIB_DIR}sha256/sha256.c
-   	${SDK_DIR}/external/nano-pb/pb_common.c
-    ${SDK_DIR}/external/nano-pb/pb_decode.c
     ${SDK_DIR}/external/mbedtls/library/aes.c
     ${SDK_DIR}/external/mbedtls/library/aesni.c
     ${SDK_DIR}/external/mbedtls/library/arc4.c
@@ -231,7 +234,7 @@ SET(SDK_CRYPTO_SOURCES
     ${SDK_DIR}/external/mbedtls/library/ecp.c
     ${SDK_DIR}/external/mbedtls/library/ecp_curves.c
     ${SDK_DIR}/external/mbedtls/library/entropy.c
-    ${SDK_DIR}/external/mbedtls/library/entropy_poll.c
+    #${SDK_DIR}/external/mbedtls/library/entropy_poll.c
     ${SDK_DIR}/external/mbedtls/library/error.c
     ${SDK_DIR}/external/mbedtls/library/gcm.c
     ${SDK_DIR}/external/mbedtls/library/havege.c
